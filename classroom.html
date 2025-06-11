@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workforce Career Institute - Enhanced Homepage</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .fade {
+      transition: opacity 1s ease-in-out;
+    }
+  
+    .nav-link {
+      position: relative;
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      transition: width 0.3s ease-in-out;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      color: black;
+      min-width: 200px;
+      z-index: 1000;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px;
+      color: black;
+      text-decoration: none;
+    }
+    .dropdown-menu a:hover {
+      background-color: #f1f1f1;
+    }
+
+
+
+    .section-title {
+      @apply text-4xl font-extrabold mb-8 text-blue-800 inline-block border-b-4 border-yellow-400 pb-2;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+ <!-- Header -->
+  <header class="bg-gray-800 text-white shadow sticky top-0 z-50 border-b-4 border-yellow-400">
+    <div class="container mx-auto flex flex-wrap items-center justify-between py-4 px-4">
+
+      <!-- Logo Section -->
+      <div class="flex items-center space-x-3">
+        <img src="https://echizen593.github.io/Workforce/LOGO2.png" alt="Logo" class="h-16 w-auto object-contain" />
+        <div>
+          <span class="block text-2xl font-bold">WORKFORCE</span>
+          <span class="block text-sm font-light tracking-widest text-gray-300">CAREER INSTITUTE</span>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden">
+        <button id="menu-toggle" class="text-white focus:outline-none" aria-label="Toggle menu">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg" >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="hidden lg:flex text-lg font-semibold tracking-wide divide-x divide-gray-500">
+        <div class="px-2">
+          <a href="index.html" class="nav-link text-white hover:text-gray-300">HOME</a>
+        </div>
+
+        <div class="relative dropdown px-2">
+          <a href="#" class="nav-link hover:text-white">ABOUT US</a>
+          <div class="dropdown-menu">
+            <a href="profile.html">Profile</a>
+            <a href="vision.html">Vision, Mission and Core Values</a>
+            <a href="legalities.html">Legalities</a>
+            <a href="board.html">Board of Directors</a>
+            <a href="team.html">The Working Team</a>
+            <a href="teaching.html">The Teaching Force</a>
+            <a href="community.html">Community Extension Program</a>
+          </div>
+        </div>
+
+        <div class="px-2">
+          <a href="academic.html" class="nav-link hover:text-white">ACADEMIC</a>
+        </div>
+
+        <div class="relative dropdown px-2">
+          <a href="#" class="nav-link hover:text-white">STUDENTS</a>
+          <div class="dropdown-menu">
+            <a href="admission.html">Admission and Registration</a>
+            <a href="student.html">Student Support</a>
+            <a href="accounts.html">Accounts</a>
+            <a href="research.html">Student Research</a>
+            <a href="career.html">Career Center</a>
+            <a href="classroom.html">The Classroom</a>
+          </div>
+        </div>
+
+        <div class="px-2">
+          <a href="contact.html" class="nav-link hover:text-white">CONTACT</a>
+        </div>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden lg:flex space-x-3">
+        <a href="admission.html" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-4 py-2 rounded-full text-sm shadow-sm">Enroll Now</a>
+        <a href="contact.html" class="border border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-4 py-2 rounded-full text-sm shadow-sm">Get Help</a>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <nav id="mobile-menu" class="lg:hidden hidden flex-col bg-gray-700 text-white text-base space-y-2 px-4 py-4">
+      <a href="index.html" class="block hover:text-yellow-300">Home</a>
+      <details class="group">
+        <summary class="font-semibold cursor-pointer">About Us</summary>
+        <div class="ml-4 space-y-1">
+          <a href="profile.html">Profile</a>
+          <a href="vision.html">Vision, Mission and Core Values</a>
+          <a href="legalities.html">Legalities</a>
+          <a href="board.html">Board of Directors</a>
+          <a href="team.html">The Working Team</a>
+          <a href="teaching.html">The Teaching Force</a>
+          <a href="community.html">Community Extension Program</a>
+        </div>
+      </details>
+      <a href="academic.html" class="block hover:text-yellow-300">Academic</a>
+      <details class="group">
+        <summary class="font-semibold cursor-pointer">Students</summary>
+        <div class="ml-4 space-y-1">
+          <a href="admission.html">Admission and Registration</a>
+          <a href="student.html">Student Support</a>
+          <a href="accounts.html">Accounts</a>
+          <a href="research.html">Student Research</a>
+          <a href="career.html">Career Center</a>
+          <a href="classroom.html">The Classroom</a>
+        </div>
+      </details>
+      <a href="contact.html" class="block hover:text-yellow-300">Contact</a>
+      <div class="mt-2 space-y-2">
+        <a href="admission.html" class="block text-center bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-4 py-2 rounded-full text-sm shadow-sm">Enroll Now</a>
+        <a href="contact.html" class="block text-center border border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-4 py-2 rounded-full text-sm shadow-sm">Get Help</a>
+      </div>
+    </nav>
+  </header>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+  
+
+
+
+<section class="bg-white pt-6 pb-12 px-4 lg:px-8">
+  <div class="container mx-auto bg-gray-100 rounded-2xl shadow-xl p-10 lg:p-16">
+
+    <!-- Section Header -->
+    <h2 class="text-4xl font-extrabold text-gray-800 mb-12 border-b-4 border-yellow-400 inline-block pb-2 tracking-wide">
+      THE CLASSROOM
+    </h2>
+
+    <!-- Stacked Layout: Image Top, Text Bottom -->
+    <div class="space-y-10">
+
+      <!-- Image Container -->
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="distance.jpg" alt="Distance Learning" class="object-cover w-full h-full rounded-2xl shadow-md">
+      </div>
+
+      <!-- Text Container -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 lg:p-8 text-left text-justify flex flex-col justify-between">
+        <div>
+          <p class="text-lg text-gray-700 leading-relaxed mb-4">
+            At Workforce Career Institute, we believe that quality education should be accessible to every student, no matter where they live. That’s why we’ve embraced distance learning as our official online learning platform—bringing the classroom to your home, wherever you are.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed mb-4">
+            Through distance learning, students can join interactive lessons, submit assignments, take quizzes, and receive real-time feedback from experienced teachers. The platform is designed to be simple, secure, and easy to navigate, even for young learners and first-time users.
+          </p>
+          <ul class="list-disc list-inside text-lg text-gray-700 leading-relaxed mb-4 space-y-2">
+            <li>Live and recorded classes</li>
+            <li>Organized learning materials and modules</li>
+            <li>Timely announcements and updates</li>
+            <li>One-on-one support from teachers</li>
+            <li>A safe and collaborative virtual learning environment</li>
+          </ul>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Whether you're in Luzon, Visayas, or Mindanao, Workforce Career Institute's digital classroom ensures that no student is left behind. Join us in making education more inclusive, flexible, and future-ready.
+          </p>
+        </div>
+
+        <!-- Button -->
+        <div>
+          <a href="https://classroom.google.com/" target="_blank" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-3 px-6 rounded-xl shadow-md transition duration-300">
+            Enter Google Classroom
+          </a>
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+</section>
+
+
+
+
+     <footer class="bg-gray-800 text-white text-center py-6 mt-16 shadow-inner border-t-4 border-yellow-400">
+    <div class="container mx-auto">
+      <p class="text-sm">&copy; 2025 Workforce Career Institute. All rights reserved.</p>
+      <p class="text-xs mt-1 italic text-gray-400">Empowering Futures with Excellence and Innovation</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+
+  

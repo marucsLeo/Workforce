@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workforce Career Institute - Enhanced Homepage</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .fade {
+      transition: opacity 1s ease-in-out;
+    }
+    .carousel-caption {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+    }
+    .nav-link {
+      position: relative;
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      transition: width 0.3s ease-in-out;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      color: black;
+      min-width: 200px;
+      z-index: 1000;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px;
+      color: black;
+      text-decoration: none;
+    }
+    .dropdown-menu a:hover {
+      background-color: #f1f1f1;
+    }
+
+  
+    .legal-image {
+      border: 4px solid #FBBF24; /* Tailwind yellow-400 */
+      border-radius: 12px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+      width: 240px;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .legal-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+      @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+    /* Section title with bottom border */
+    .section-title {
+      @apply text-4xl font-extrabold mb-8 text-blue-800 inline-block border-b-4 border-yellow-400 pb-2;
+    }
+
+      toggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+    </style>
+
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+
+ <!-- Header -->
+  <header class="bg-gray-800 text-white shadow sticky top-0 z-50 border-b-4 border-yellow-400">
+    <div class="container mx-auto flex flex-wrap items-center justify-between py-4 px-4">
+
+      <!-- Logo Section -->
+      <div class="flex items-center space-x-3">
+        <img src="https://echizen593.github.io/Workforce/LOGO2.png" alt="Logo" class="h-16 w-auto object-contain" />
+        <div>
+          <span class="block text-2xl font-bold">WORKFORCE</span>
+          <span class="block text-sm font-light tracking-widest text-gray-300">CAREER INSTITUTE</span>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden">
+        <button id="menu-toggle" class="text-white focus:outline-none" aria-label="Toggle menu">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg" >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="hidden lg:flex text-lg font-semibold tracking-wide divide-x divide-gray-500">
+        <div class="px-2">
+          <a href="index.html" class="nav-link text-white hover:text-gray-300">HOME</a>
+        </div>
+
+        <div class="relative dropdown px-2">
+          <a href="#" class="nav-link hover:text-white">ABOUT US</a>
+          <div class="dropdown-menu">
+            <a href="profile.html">Profile</a>
+            <a href="vision.html">Vision, Mission and Core Values</a>
+            <a href="legalities.html">Legalities</a>
+            <a href="board.html">Board of Directors</a>
+            <a href="team.html">The Working Team</a>
+            <a href="teaching.html">The Teaching Force</a>
+            <a href="community.html">Community Extension Program</a>
+          </div>
+        </div>
+
+        <div class="px-2">
+          <a href="academic.html" class="nav-link hover:text-white">ACADEMIC</a>
+        </div>
+
+        <div class="relative dropdown px-2">
+          <a href="#" class="nav-link hover:text-white">STUDENTS</a>
+          <div class="dropdown-menu">
+            <a href="admission.html">Admission and Registration</a>
+            <a href="student.html">Student Support</a>
+            <a href="accounts.html">Accounts</a>
+            <a href="research.html">Student Research</a>
+            <a href="career.html">Career Center</a>
+            <a href="classroom.html">The Classroom</a>
+          </div>
+        </div>
+
+        <div class="px-2">
+          <a href="contact.html" class="nav-link hover:text-white">CONTACT</a>
+        </div>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden lg:flex space-x-3">
+        <a href="admission.html" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-4 py-2 rounded-full text-sm shadow-sm">Enroll Now</a>
+        <a href="contact.html" class="border border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-4 py-2 rounded-full text-sm shadow-sm">Get Help</a>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <nav id="mobile-menu" class="lg:hidden hidden flex-col bg-gray-700 text-white text-base space-y-2 px-4 py-4">
+      <a href="index.html" class="block hover:text-yellow-300">Home</a>
+      <details class="group">
+        <summary class="font-semibold cursor-pointer">About Us</summary>
+        <div class="ml-4 space-y-1">
+          <a href="profile.html">Profile</a>
+          <a href="vision.html">Vision, Mission and Core Values</a>
+          <a href="legalities.html">Legalities</a>
+          <a href="board.html">Board of Directors</a>
+          <a href="team.html">The Working Team</a>
+          <a href="teaching.html">The Teaching Force</a>
+          <a href="community.html">Community Extension Program</a>
+        </div>
+      </details>
+      <a href="academic.html" class="block hover:text-yellow-300">Academic</a>
+      <details class="group">
+        <summary class="font-semibold cursor-pointer">Students</summary>
+        <div class="ml-4 space-y-1">
+          <a href="admission.html">Admission and Registration</a>
+          <a href="student.html">Student Support</a>
+          <a href="accounts.html">Accounts</a>
+          <a href="research.html">Student Research</a>
+          <a href="career.html">Career Center</a>
+          <a href="classroom.html">The Classroom</a>
+        </div>
+      </details>
+      <a href="contact.html" class="block hover:text-yellow-300">Contact</a>
+      <div class="mt-2 space-y-2">
+        <a href="admission.html" class="block text-center bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-4 py-2 rounded-full text-sm shadow-sm">Enroll Now</a>
+        <a href="contact.html" class="block text-center border border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-4 py-2 rounded-full text-sm shadow-sm">Get Help</a>
+      </div>
+    </nav>
+  </header>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+  
+  <!-- Homepage with Enhanced Image Carousel -->
+<section id="home" class="pt-12 pb-6 bg-white">
+    <div class="container mx-auto text-center px-4">
+      <h2 class="text-4xl font-extrabold mb-4 text-blue-800">Empowering Your Future Through Career-Focused Education</h2>
+      <p class="mb-8 text-lg text-gray-700">Explore industry-aligned programs, flexible learning options, and expert guidance to help you succeed in today’s workforce.</p>
+      <div class="relative w-full max-w-6xl h-[500px] mx-auto mb-6">
+      <img id="carouselImage" class="w-full h-full object-cover rounded-lg shadow-lg fade opacity-100" src="https://echizen593.github.io/Workforce/IMG1.jpg" alt="Slideshow Image">
+      <div id="carouselCaption" class="carousel-caption text-sm">Welcome to Workforce Career Institute</div>
+  <!-- Carousel Section -->
+  <section class="relative overflow-hidden">
+    <div id="carousel" class="relative w-full">
+       <div class="carousel-slide hidden">
+        <img src="https://echizen593.github.io/Workforce/carousel1.jpg" alt="Slide 1" class="carousel-image">
+      </div>
+      <div class="carousel-slide hidden">
+        <img src="https://echizen593.github.io/Workforce/carousel2.jpg" alt="Slide 2" class="carousel-image">
+      </div>
+      <div class="carousel-slide hidden">
+        <img src="https://echizen593.github.io/Workforce/carousel3.jpg" alt="Slide 3" class="carousel-image">
+      </div>
+       <div class="carousel-slide hidden">
+        <img src="https://echizen593.github.io/Workforce/carousel4.jpg" alt="Slide 4" class="carousel-image">
+      </div>
+    </div>
+      </div>
+    </div> 
+  </section>
+
+  <!-- JavaScript for Image Carousel with Captions -->
+  <script>
+    const images = [
+      {
+        src:'https://echizen593.github.io/Workforce/IMG1.jpg',
+        caption: 'Welcome to Workforce Career Institute'
+      },
+      {
+        src:'https://echizen593.github.io/Workforce/IMG2.jpg',
+        caption: 'Advance your skills with our career programs'
+      },
+      {
+        src:'https://echizen593.github.io/Workforce/IMG3.jpg',
+        caption: 'Student success is our mission'
+      },
+      {
+        src:'https://echizen593.github.io/Workforce/IMG5.jpg',
+        caption: 'Join us today and start your journey'
+      }
+    ];
+    let index = 0;
+    const imageElement = document.getElementById('carouselImage');
+    const captionElement = document.getElementById('carouselCaption');
+
+    setInterval(() => {
+      imageElement.classList.remove('opacity-100');
+      imageElement.classList.add('opacity-0');
+      setTimeout(() => {
+        index = (index + 1) % images.length;
+        imageElement.src = images[index].src;
+        captionElement.textContent = images[index].caption;
+        imageElement.classList.remove('opacity-0');
+        imageElement.classList.add('opacity-100');
+      }, 500);
+    }, 4000);
+  </script>
+
+ 
+<!-- ========= NEWS & FEATURES ========= -->
+<section class="pt-8 pb-10 bg-gray-100" id="news">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center text-blue-800 mb-16">News &amp; Features</h2>
+
+    <!-- Grid container -->
+    <div id="news-carousel" class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <!-- All cards (6 total) -->
+      <article class="news-card bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col group">
+        <img src="https://echizen593.github.io/Workforce/webinar3.jpg" alt="News 1" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="p-6 flex flex-col flex-grow">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">Webinar</span>
+            <span class="text-gray-500 text-sm">May 10, 2025</span>
+          </div>
+          <h3 class="text-xl font-semibold text-blue-900 mb-3 group-hover:text-blue-700 transition-colors duration-200">Sikad Patinikan: Kultura at Panitikan ng Kaunlaran Webinar</h3>
+          <p class="text-gray-700 text-sm flex-grow text-justify">Isang matagumpay na webinar na pinamagatang "Sikad Patinikan: Kultura at Panitikan ng Kaunlaran" ang isinagawa noong Mayo 10, 2025 sa pamamagitan ng Google Meet. Pinangunahan ito ni Dr. Sharon Masula ng FILI 205, katuwang ang kanyang mga estudyante. Tampok si Mr. Shur Mangilaya na nagbahagi ng talakayan hinggil sa maikling kwento bilang salamin ng kultura at kasaysayan.</p>
+        </div>
+      </article>
+
+      <article class="news-card bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col group">
+        <img src="https://echizen593.github.io/Workforce/compre.jpg" alt="News 2" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="p-6 flex flex-col flex-grow">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">Announcement</span>
+            <span class="text-gray-500 text-sm">May 9, 2025</span>
+          </div>
+          <h3 class="text-xl font-semibold text-blue-900 mb-3 group-hover:text-blue-700 transition-colors duration-200">Comprehensive Examination</h3>
+          <p class="text-gray-700 text-sm flex-grow text-justify">ANNOUNCEMENT!
+The Consortium Partnership will conduct the Third Term Comprehensive Examinations for Master of Arts in Education and Master in Public Administration programs on May 26 and 27, 2025.
+Good luck to all examinees!!! #workforcecareerinstitute #sandigancolleges #ComprehensiveExamination #MAED #MPA</p>
+        </div>
+      </article>
+
+      <article class="news-card bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col group">
+        <img src="https://echizen593.github.io/Workforce/anniv.jpg" alt="News 3" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="p-6 flex flex-col flex-grow">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-3 py-1 rounded-full">Event</span>
+            <span class="text-gray-500 text-sm">May 6, 2025</span>
+          </div>
+          <h3 class="text-xl font-semibold text-blue-900 mb-3 group-hover:text-blue-700 transition-colors duration-200">1st Founding Anniversary and Open House</h3>
+          <p class="text-gray-700 text-sm flex-grow text-justify">TESDA Students celebrate with #workforcecareerinstitute's 1st Founding Anniversary and Open House.</p>
+        </div>
+      </article>
+
+      <article class="news-card bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col group">
+        <img src="https://echizen593.github.io/Workforce/news2.jpg" alt="News 4" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="p-6 flex flex-col flex-grow">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">Event</span>
+            <span class="text-gray-500 text-sm">March 27, 2025</span>
+          </div>
+          <h3 class="text-xl font-semibold text-blue-900 mb-3 group-hover:text-blue-700 transition-colors duration-200">Another Exciting Event</h3>
+          <p class="text-gray-700 text-sm flex-grow">Join us for another special day at Workforce Career Institute...</p>
+        </div>
+      </article>
+
+      <article class="news-card bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col group">
+        <img src="https://echizen593.github.io/Workforce/news1.jpg" alt="News 5" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="p-6 flex flex-col flex-grow">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-3 py-1 rounded-full">Reminder</span>
+            <span class="text-gray-500 text-sm">March 1, 2025</span>
+          </div>
+          <h3 class="text-xl font-semibold text-blue-900 mb-3 group-hover:text-blue-700 transition-colors duration-200">Reminder: Submission Deadline</h3>
+          <p class="text-gray-700 text-sm flex-grow">Don’t forget to submit your final project by the end of this week...</p>
+        </div>
+      </article>
+
+      <article class="news-card bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col group">
+        <img src="https://echizen593.github.io/Workforce/news3.jpg" alt="News 6" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="p-6 flex flex-col flex-grow">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">Scholarship</span>
+            <span class="text-gray-500 text-sm">April 1, 2025</span>
+          </div>
+          <h3 class="text-xl font-semibold text-blue-900 mb-3 group-hover:text-blue-700 transition-colors duration-200">Scholarship Extension Announcement</h3>
+          <p class="text-gray-700 text-sm flex-grow">We’re extending scholarship applications until May 15, 2025...</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Nav buttons -->
+    <div class="flex justify-center mt-4 space-x-6">
+      <button id="prevBtn" aria-label="Previous" class="transform hover:scale-110 transition-transform bg-gray-700 text-white px-4 py-3 rounded-full shadow-md hover:shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button id="nextBtn" aria-label="Next" class="transform hover:scale-110 transition-transform bg-gray-700 text-white px-4 py-3 rounded-full shadow-md hover:shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Carousel Script -->
+<script>
+  const cards = document.querySelectorAll('.news-card');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  let currentIndex = 0;
+  const cardsPerPage = 3;
+
+  function updateCarousel() {
+    cards.forEach((card, index) => {
+      card.classList.toggle('hidden', !(index >= currentIndex && index < currentIndex + cardsPerPage));
+    });
+
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex + cardsPerPage >= cards.length;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex + cardsPerPage < cards.length) {
+      currentIndex += cardsPerPage;
+      updateCarousel();
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex - cardsPerPage >= 0) {
+      currentIndex -= cardsPerPage;
+      updateCarousel();
+    }
+  });
+
+  updateCarousel();
+</script>
+
+<section class="bg-gray-100 py-6">
+  <div class="container mx-auto px-6">
+    <div class="bg-white p-10 rounded-2xl shadow-lg">
+
+      <!-- Flex Layout -->
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        
+        <!-- Text Content -->
+        <div class="lg:w-1/2 text-center lg:text-left">
+          <p class="text-blue-500 font-semibold text-sm uppercase tracking-wide mb-3">A Great Place To Learn</p>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+            Learn Boldly. Inspire Always.<br />
+            Education Beyond the Degree.
+          </h1>
+          <p class="text-gray-600 text-lg leading-relaxed max-w-xl">
+            At Workforce Career Institute, we equip you with more than just academic knowledge—we shape future-ready professionals.
+            Dive into transformative learning guided by industry experts and enriched with practical tools.
+          </p>
+        </div>
+
+        <!-- Animated Circle Image (Smaller) -->
+          <div class="w-[200px] h-[200px] md:w-[240px] md:h-[240px] rounded-full overflow-hidden animate-float shadow-xl ring-4 ring-blue-200">
+            <img src="https://echizen593.github.io/Workforce/pic2.jpg" alt="Students" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+      </div>
+    </div>
+</section>
+<section class="py-12 bg-gray-100" id="programs">
+<div class="w-full px-4">
+    <h2 class="text-3xl font-bold text-center text-cyan-600 mb-10">Program Categories</h2>
+
+    <!-- White container starts here -->
+<div class="bg-white rounded-3xl shadow-lg p-6 w-full">
+      <div id="scrollContainer" class="overflow-hidden whitespace-nowrap relative">
+        <div id="scrollContent" class="inline-flex space-x-6 min-w-max px-2">
+
+          <!-- Repeat cards to enable seamless scroll -->
+          <div class="flex space-x-6">
+            <!-- Program Cards -->
+            <div class="w-48 bg-blue-400 text-white rounded-lg p-6 text-center shadow-md">
+              <div class="text-4xl mb-3">💻</div>
+              <h3 class="font-semibold text-md">Business</h3>
+            </div>
+            <div class="w-48 bg-blue-900 text-white rounded-lg p-6 text-center shadow-md">
+              <div class="text-4xl mb-3">❤️</div>
+              <h3 class="font-semibold text-md">Agriculture</h3>
+            </div>
+            <div class="w-48 bg-pink-500 text-white rounded-lg p-6 text-center shadow-md">
+              <div class="text-4xl mb-3">📘</div>
+              <h3 class="font-semibold text-md">Education</h3>
+            </div>
+            <div class="w-48 bg-blue-600 text-white rounded-lg p-6 text-center shadow-md">
+              <div class="text-4xl mb-3">🤝</div>
+              <h3 class="font-semibold text-md">Social Work</h3>
+            </div>
+            <div class="w-48 bg-green-500 text-white rounded-lg p-6 text-center shadow-md">
+              <div class="text-4xl mb-3">🔒</div>
+              <h3 class="font-semibold text-md">Criminology</h3>
+            </div>
+          </div>
+
+          <!-- Duplicate cards for continuous scroll -->
+          <div class="flex space-x-6">
+            <div class="w-48 bg-blue-400 text-white rounded-lg p-6 text-center shadow-md">
+              <div class="text-4xl mb-3">💻</div>
+              <h3 class="font-semibold text-md">Business</h3>
+            </div>
+            <div class="w-48 bg-blue-900 text-white rounded-lg p-6 text-center shadow-md">
+              <div class="text-4xl mb-3">❤️</div>
+              <h3 class="font-semibold text-md">Agriculture</h3>
+            </div>
+            <div class="w-48 bg-pink-500 text-white rounded-lg p-6 text-center shadow-md">
+              <div class="text-4xl mb-3">📘</div>
+              <h3 class="font-semibold text-md">Education</h3>
+            </div>
+            <div class="w-48 bg-blue-600 text-white rounded-lg p-6 text-center shadow-md">
+              <div class="text-4xl mb-3">🤝</div>
+              <h3 class="font-semibold text-md">Social Work</h3>
+            </div>
+            <div class="w-48 bg-green-500 text-white rounded-lg p-6 text-center shadow-md">
+              <div class="text-4xl mb-3">🔒</div>
+              <h3 class="font-semibold text-md">Criminology</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<script>
+  const container = document.getElementById('scrollContainer');
+  const content = document.getElementById('scrollContent');
+
+  let scrollAmount = 0;
+
+  function autoScrollRight() {
+    scrollAmount += 1;
+    container.scrollLeft = scrollAmount;
+
+    if (scrollAmount >= content.scrollWidth / 2) {
+      scrollAmount = 0;
+    }
+
+    requestAnimationFrame(autoScrollRight);
+  }
+
+  autoScrollRight();
+</script>
+          
+
+<section id="testimonials" class="py-15 bg-gray-100 overflow-hidden">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">What People Say About Us</h2>
+
+    <!-- Outer Scroll Container -->
+    <div class="relative overflow-hidden">
+      <!-- Scrolling Track -->
+      <div id="testimonialTrack" class="flex gap-6 w-max animate-scroll">
+        <!-- Testimonial Cards (Repeat for 9 total) -->
+        <div class="bg-white p-6 rounded-xl shadow-lg w-80 shrink-0">
+          <div class="text-4xl text-cyan-600 mb-4">“</div>
+          <p class="text-gray-700 italic mb-6">I enjoyed my online Master's Program at Workforce Career Institute. Despite the distance, I felt connected with my professors and peers through an engaging virtual classes and discussions </p>
+          <h3 class="font-semibold text-blue-900">Ronilda Osuyos</h3>
+          <p class="text-sm text-gray-500">MAED Candidate</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg w-80 shrink-0">
+          <div class="text-4xl text-cyan-600 mb-4">“</div>
+          <p class="text-gray-700 italic mb-6">Thank you Workforce Institute, for opening a door when I needed it most. Because of you, I finished what I started and I'm stepping inot the future with gratitude and purpose  </p>
+          <h3 class="font-semibold text-blue-900">Ace Martinez</h3>
+          <p class="text-sm text-gray-500">BSBA Candidate</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg w-80 shrink-0">
+          <div class="text-4xl text-cyan-600 mb-4">“</div>
+          <p class="text-gray-700 italic mb-6">My one term in Workforce Institute have been a great learning experience</p>
+          <h3 class="font-semibold text-blue-900">Lyka Gomez</h3>
+          <p class="text-sm text-gray-500">MAED-TLE Student</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg w-80 shrink-0">
+          <div class="text-4xl text-cyan-600 mb-4">“</div>
+          <p class="text-gray-700 italic mb-6">Workforce Career Institute has provided me with valuable and positive learning experience.</p>
+          <h3 class="font-semibold text-blue-900">Lorenzo DeLa Cruz</h3>
+          <p class="text-sm text-gray-500">MPA Candidate</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg w-80 shrink-0">
+          <div class="text-4xl text-cyan-600 mb-4">“</div>
+          <p class="text-gray-700 italic mb-6">Workforce Career Institute provided me with the opportunity to complete my degree while working full-time</p>
+          <h3 class="font-semibold text-blue-900">Addrian F. Nicolas</h3>
+          <p class="text-sm text-gray-500">BSBA Finance Candidate</p>
+        </div>
+
+         <!-- Testimonial Cards (Repeat for 9 total) -->
+        <div class="bg-white p-6 rounded-xl shadow-lg w-80 shrink-0">
+          <div class="text-4xl text-cyan-600 mb-4">“</div>
+          <p class="text-gray-700 italic mb-6">I enjoyed my online Master's Program at Workforce Career Institute. Despite the distance, I felt connected with my professors and peers through an engaging virtual classes and discussions </p>
+          <h3 class="font-semibold text-blue-900">Ronilda Osuyos</h3>
+          <p class="text-sm text-gray-500">MAED Candidate</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg w-80 shrink-0">
+          <div class="text-4xl text-cyan-600 mb-4">“</div>
+          <p class="text-gray-700 italic mb-6">Thank you Workforce Institute, for opening a door when I needed it most. Because of you, I finished what I started and I'm stepping inot the future with gratitude and purpose  </p>
+          <h3 class="font-semibold text-blue-900">Ace Martinez</h3>
+          <p class="text-sm text-gray-500">BSBA Candidate</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg w-80 shrink-0">
+          <div class="text-4xl text-cyan-600 mb-4">“</div>
+          <p class="text-gray-700 italic mb-6">My one term in Workforce Institute have been a great learning experience</p>
+          <h3 class="font-semibold text-blue-900">Lyka Gomez</h3>
+          <p class="text-sm text-gray-500">MAED-TLE Student</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg w-80 shrink-0">
+          <div class="text-4xl text-cyan-600 mb-4">“</div>
+          <p class="text-gray-700 italic mb-6">Workforce Career Institute has provided me with valuable and positive learning experience.</p>
+          <h3 class="font-semibold text-blue-900">Lorenzo DeLa Cruz</h3>
+          <p class="text-sm text-gray-500">MPA Candidate</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg w-80 shrink-0">
+          <div class="text-4xl text-cyan-600 mb-4">“</div>
+          <p class="text-gray-700 italic mb-6">Workforce Career Institute provided me with the opportunity to complete my degree while working full-time</p>
+          <h3 class="font-semibold text-blue-900">Addrian F. Nicolas</h3>
+          <p class="text-sm text-gray-500">BSBA Finance Candidate</p>
+        </div>
+
+
+    
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- Tailwind animation -->
+<style>
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-scroll {
+    animation: scroll 60s linear infinite;
+  }
+</style>
+
+
+
+      
+   <footer class="bg-gray-800 text-white text-center py-6 mt-16 shadow-inner border-t-4 border-yellow-400">
+    <div class="container mx-auto">
+      <p class="text-sm">&copy; 2025 Workforce Career Institute. All rights reserved.</p>
+      <p class="text-xs mt-1 italic text-gray-400">Empowering Futures with Excellence and Innovation</p>
+    </div>
+  </footer>
+
+ 
+
+
+</body>
+</html>
+
+

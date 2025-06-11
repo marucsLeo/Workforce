@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workforce Career Institute - Enhanced Homepage</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .fade {
+      transition: opacity 1s ease-in-out;
+    }
+    .carousel-caption {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+    }
+    .nav-link {
+      position: relative;
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      transition: width 0.3s ease-in-out;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      color: black;
+      min-width: 200px;
+      z-index: 1000;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px;
+      color: black;
+      text-decoration: none;
+    }
+    .dropdown-menu a:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Enhanced board image style with yellow border */
+    .legal-image {
+      border: 4px solid #FBBF24; /* Tailwind yellow-400 */
+      border-radius: 12px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+      width: 240px;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .legal-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+      @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+    /* Section title with bottom border */
+    .section-title {
+      @apply text-4xl font-extrabold mb-8 text-blue-800 inline-block border-b-4 border-yellow-400 pb-2;
+    }
+
+    </style>
+
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+ <!-- Header -->
+  <header class="bg-gray-800 text-white shadow sticky top-0 z-50 border-b-4 border-yellow-400">
+    <div class="container mx-auto flex flex-wrap items-center justify-between py-4 px-4">
+
+      <!-- Logo Section -->
+      <div class="flex items-center space-x-3">
+        <img src="https://echizen593.github.io/Workforce/LOGO2.png" alt="Logo" class="h-16 w-auto object-contain" />
+        <div>
+          <span class="block text-2xl font-bold">WORKFORCE</span>
+          <span class="block text-sm font-light tracking-widest text-gray-300">CAREER INSTITUTE</span>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden">
+        <button id="menu-toggle" class="text-white focus:outline-none" aria-label="Toggle menu">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg" >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Desktop Nav with vertical dividers and tighter spacing -->
+      <nav class="hidden lg:flex text-lg font-semibold tracking-wide divide-x divide-gray-500">
+        <div class="px-2">
+          <a href="index.html" class="nav-link text-white hover:text-gray-300">HOME</a>
+        </div>
+
+        <div class="relative dropdown px-2">
+          <a href="#" class="nav-link hover:text-white">ABOUT US</a>
+          <div class="dropdown-menu">
+            <a href="profile.html">Profile</a>
+            <a href="vision.html">Vision, Mission and Core Values</a>
+            <a href="legalities.html">Legalities</a>
+            <a href="board.html">Board of Directors</a>
+            <a href="team.html">The Working Team</a>
+            <a href="teaching.html">The Teaching Force</a>
+            <a href="community.html">Community Extension Program</a>
+          </div>
+        </div>
+
+        <div class="px-2">
+          <a href="academic.html" class="nav-link hover:text-white">ACADEMIC</a>
+        </div>
+
+        <div class="relative dropdown px-2">
+          <a href="#" class="nav-link hover:text-white">STUDENTS</a>
+          <div class="dropdown-menu">
+            <a href="admission.html">Admission and Registration</a>
+            <a href="student.html">Student Support</a>
+            <a href="accounts.html">Accounts</a>
+            <a href="research.html">Student Research</a>
+            <a href="career.html">Career Center</a>
+            <a href="classroom.html">The Classroom</a>
+          </div>
+        </div>
+
+        <div class="px-2">
+          <a href="contact.html" class="nav-link hover:text-white">CONTACT</a>
+        </div>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden lg:flex space-x-3">
+        <a href="admission.html" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-4 py-2 rounded-full text-sm shadow-sm">Enroll Now</a>
+        <a href="contact.html" class="border border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-4 py-2 rounded-full text-sm shadow-sm">Get Help</a>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <nav id="mobile-menu" class="lg:hidden hidden flex-col bg-gray-700 text-white text-base space-y-2 px-4 py-4">
+      <a href="index.html" class="block hover:text-yellow-300">Home</a>
+      <details class="group">
+        <summary class="font-semibold cursor-pointer">About Us</summary>
+        <div class="ml-4 space-y-1">
+          <a href="profile.html">Profile</a>
+          <a href="vision.html">Vision, Mission and Core Values</a>
+          <a href="legalities.html">Legalities</a>
+          <a href="board.html">Board of Directors</a>
+          <a href="team.html">The Working Team</a>
+          <a href="teaching.html">The Teaching Force</a>
+          <a href="community.html">Community Extension Program</a>
+        </div>
+      </details>
+      <a href="academic.html" class="block hover:text-yellow-300">Academic</a>
+      <details class="group">
+        <summary class="font-semibold cursor-pointer">Students</summary>
+        <div class="ml-4 space-y-1">
+          <a href="admission.html">Admission and Registration</a>
+          <a href="student.html">Student Support</a>
+          <a href="accounts.html">Accounts</a>
+          <a href="research.html">Student Research</a>
+          <a href="career.html">Career Center</a>
+          <a href="classroom.html">The Classroom</a>
+        </div>
+      </details>
+      <a href="contact.html" class="block hover:text-yellow-300">Contact</a>
+      <div class="mt-2 space-y-2">
+        <a href="admission.html" class="block text-center bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-4 py-2 rounded-full text-sm shadow-sm">Enroll Now</a>
+        <a href="contact.html" class="block text-center border border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-4 py-2 rounded-full text-sm shadow-sm">Get Help</a>
+      </div>
+    </nav>
+  </header>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+  
+
+ <section class="px-4 py-10 bg-gray-100">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-4xl font-extrabold mb-8 text-black-800">THE TEACHING FORCE</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+
+ <!-- FACULTY1 -->
+  <div> <img src="board5.png" alt="" class="legal-image mb-4 mx-auto">
+  <h3 class="text-2xl font-semibold text-blue-600 text-center">Bordo, Peter Elmar C.</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Executive Director, Workforce Career Institute</li>
+    <li>Publisher and Executive Editor, The Mentor: A Multidisciplinary E-Gazette</li>
+    <li>Doctor of Education, SPA College</li>
+    <li>Master of Arts in Education major in English, Philippine Christian University</li>
+    <li>Master of Business Administration, AHCI Graduate School</li>
+    <li>Bachelor of Arts in English – Spanish, Polytechnic University of the Philippines</li>
+  </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ Linguistics, ESL, Educational Management, Research, Career Development, and Human Resources Management</li>
+     </ul>
+     </div>
+
+ <!-- FACULTY2 -->
+  <div> <img src="man.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">Castillo, Kevin N.</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Teacher II, San Jose City National High School</li>
+    <li>Master of Arts in Education major in English, Core Gateway College, Inc.</li>
+    <li>Bachelor of Secondary Education major in English, Polytechnic University of the Philippines</li>
+  </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ Linguistics, English, Educational Management, and Research</li>
+     </ul>
+     </div>
+  <div> <img src="man.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">De La Cruz, Lorenzo R.</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Secretary to the Mayor, Municipality of Almeria</li>
+    <li>Master of Public Administration, SPA College</li>
+    <li>Master of Development Communication (c), UP Open University</li>
+    <li>Bachelor of Arts in Communication Arts, Naval State University</li>
+  </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ Communication and Public Administration</li>
+     </ul>
+     </div>
+
+  <div> <img src="woman.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">De Jesus, Eleonor A.</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Master Teacher II, Pulong Buhangin National High School</li>
+    <li>Associate Professor III, Polytechnic University of the Philippines</li>
+    <li>Doctor of Education, Greenville College</li
+    <li>Master of Arts in Education major in Administration & Supervision, Meycauayan College</li>
+    <li>Master of Arts in Education Curriculum major in Social Studies (CAR), Bulacan State University</li>
+    <li>Bachelor of Secondary Education major in Social Studies, Bulacan State University</li>
+  </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ Social Studies, Educational Management, and Research</li>
+     </ul>
+     </div>
+ 
+  <div> <img src="woman.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">Dela Cruz, Cynthia P.</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Principal II, Dampol 2nd National High School</li>
+    <li>Master of Arts in Education major in Educational Management, Harvardian College</li>
+    <li>Bachelor of Science in Education, Baliuag University</li
+  </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ Educational Management, Leadership, and Research</li>
+     </ul>
+     </div>
+     
+  <div> <img src="woman.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">Dolia, Jessie P.</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Teacher III, Pagadian City National Comprehensive High School</li>
+    <li>Juris Doctor (c), University of San Carlos</li>
+    <li>Master of Science in Mathematics, Cebu Normal University</li>
+    <li>Master of Arts in Mathematics, Cebu Technological University</li>
+    <li>Bachelor of Science in Mathematics, Negros Oriental State University</li>
+  </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ Higher Mathematics, Law, Research, Statistics</li>
+     </ul>
+     </div>
+
+  <div> <img src="woman.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">Ignacio, Dyann P.</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Instructor I, Polytechnic University of the Philippines</li>
+    <li>Doctor of Philosophy in Educational Leadership & Management, La Consolacion University</li>
+    <li>Master in Educational Management, Polytechnic University of the Philippines</li>
+    <li>Bachelor of Business Teacher Education, Polytechnic University of the Philippines</li>
+  </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ TLE, Educational Management, and Research</li>
+     </ul>
+     </div>
+  
+  <div> <img src="man.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">Limutan, Julian John N.</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Teacher III, Pusok National High School</li>
+    <li>Former Assistant Principal, Asian Learning Center</li>
+    <li>Doctor of Education major in English Language Teaching, Cebu Normal University</li>
+    <li>Master of Arts in Education major in English Teaching, Cebu Technological University</li>
+    <li>Bachelor of Arts in English, Philippine State College of Aeronautics</li>
+    </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ Linguistics, ESL, Research, and Educational Management</li>
+     </ul>
+     </div>
+
+
+       <div> <img src="woman.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">Lumanug, Louise L.</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Education Program Supervisor II, DepEd Region 3</li>
+    <li>Doctor of Philosophy in Educational Management, Guagua National Colleges</li>
+    <li>Master of Arts in Education major in Educational Management, BPSU</li>
+    <li>Bachelor of Science in Psychology, Bataan Peninsula State University (BPSU)</li>
+    </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ Educational Management, Research, Psychology, Counseling, and Social Studies
+</li>
+     </ul>
+     </div>
+
+      
+      <!-- FACULTY 1-->
+  <div> <img src="woman.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">Masula, Sharon</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Professor I, Aklan State University</li>
+    <li>Doctor of Education major in Filipino Language Teaching, Filamer Christian University</li>
+    <li>Doctor of Philosophy major in Filipino Literature, Manuel L. Quezon University</li>
+    <li>Master of Arts in Filipino, Capiz State University</li>
+    <li>Bachelor of Science in Education major in Filipino, Pamantasan ng Lungsod ng Maynila</li>
+        </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ Linguistics, Filipino, Research, and Educational Management</li>
+     </ul>
+     </div>
+
+  <div> <img src="man.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">Pascual, Mark Nathaniel G. </h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Head Teacher III, Parada National High School</li>
+    <li>Professorial Lecturer, Far Eastern University – Graduate School</li>
+    <li>Doctor of Philosophy in Educational Management, Bulacan State University</li>
+    <li>Master of Arts in Education major in English, Bulacan State University</li>
+    <li>Bachelor of Secondary Education major in English, Polytechnic University of the Philippines</li>
+        </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ Linguistics, ESL, Research, and Educational Management</li>
+     </ul>
+     </div>
+
+  <div> <img src="woman.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">Placido, Hartnett Kathryn M.</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Former Campus Director, PUP Sta Maria and Pulilan</li>
+    <li>Master in Educational Management, Polytechnic University of the Philippines</li>
+    <li>Bachelor of Laws, University of the Philippines</li>
+    <li>Bachelor of Arts in Political Science, University of the Philippines</li>
+        </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ Political Science, Foreign Relations, Local Government, Public Government
+</li>
+     </ul>
+     </div>
+
+<div> <img src="woman.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">Pulma, Jane S.</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Chief, PUP Career Development and Placement Services</li>
+    <li>Doctor of Public Administration (c), Polytechnic University of the Philippines</li>
+    <li>Master of Public Administration, Polytechnic University of the Philippines</li>
+    <li>Bachelor of Political Science major in PA, Polytechnic University of the Philippines</li>
+        </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ Public Administration, Career Development and Political Science</li>
+     </ul>
+     </div>
+
+<div> <img src="man.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">Pulvera, Glenn J.</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Assistant Professor IV, Palompon Institute of Technology</li>
+    <li>Doctor of Philosophy in Technology Management, Cebu Technological University</li>
+    <li>Master of Science in Industrial Technology, Cebu Technological University</li>
+    <li>Bachelor of Science in Electronics & Communications Engineering, Cebu Institute of Technology</li>
+        </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ Technology, General Mathematics, Statistics, Research, Education</li>
+     </ul>
+     </div>
+
+    <div> <img src="woman.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">Sikat, Minerva M.</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Principal II, FVR National High School</li>
+    <li>Doctor of Philosophy in Educational Psychology, DGLF Colleges</li>
+    <li>Master in Educational Management, DGLF Colleges</li>
+    <li>Bachelor of Arts in Economics, Polytechnic University of the Philippines</li>
+        </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅ Social Studies, Educational Management, and Research</li>
+     </ul>
+     </div>
+
+       <div> <img src="woman.jpg" alt="" class="legal-image mb-4 mx-auto">
+<h3 class="text-2xl font-semibold text-blue-600 text-center">Tianchon, Rosalie H.</h3>
+  <ul class="list-disc list-inside text-gray-700 mb-2 text-left">
+    <li>Head Teacher III - MAPEH, Pulong Buhangin National High School</li>
+    <li>Doctor of Education, Greenville College</li>
+    <li>Master in Physical Education and Sports, Pamantasan ng Lungsod ng Maynila</li>
+    <li>Bachelor in Physical Education, Polytechnic University of the Philippines</li>
+        </ul>
+  <ul class="list-inside text-gray-700 text-left">
+     <p class="font-semibold mt-2">Areas of Focus:</p>
+     <ul class="list-inside text-gray-700">
+      <li>✅MAPEH, Educational Management, and Research</li>
+     </ul>
+     </div>
+
+  
+
+ </div>
+  </section>
+
+    
+      
+   <footer class="bg-gray-800 text-white text-center py-6 mt-16 shadow-inner border-t-4 border-yellow-400">
+    <div class="container mx-auto">
+      <p class="text-sm">&copy; 2025 Workforce Career Institute. All rights reserved.</p>
+      <p class="text-xs mt-1 italic text-gray-400">Empowering Futures with Excellence and Innovation</p>
+    </div>
+  </footer>
+
+     
+
+</body>
+</html>
+
+  
+
